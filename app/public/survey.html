@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Survey Page</title>
+
+  <!-- Latest compiled and minified CSS & JS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+
+</head>
+<body>
+<div class ="container">
+<div class="jumbotron">
+
+      <div class="row">
+       
+        <div class="col-lg-12 text-center v-center">
+          
+          <h1> <span class="glyphicon glyphicon-heart"></span> Friend Finder</h1>
+          <p class="lead">An app to find a compatible friend </p>
+          
+      </div>
+        </div>
+        </div>
+
+        <div class="strong"> <p class="strong"> 1 = Strongly Disagree 
+        <br> 5 = Strognly Agree
+        </p>
+        </div>
+
+  <div class="row">
+        <div class="col-xs-4">
+            <h4>Name *</h4>
+  <input type="text" name="" id="name" class="form-control" required="">
+    </div>
+    </div>
+
+  <div class="row">
+    <div class="col-md-8">
+  <h4>Link to your picture *</h4>
+  <input type="text" name="" id="photo" class="form-control" required="">
+    </div>
+    </div>
+ 
+
+   <p>Love is really a deep friendship, not a mysterious, mystical emotion. </p>
+    <form id = "question1">
+      <label class="radio-inline">
+        <input type="radio" name="q1" value = "1">1 
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="q1" value = "2">2
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="q1" value = "3">3
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="q1" value = "4">4
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="q1" value = "5">5 
+      </label>
+    </form>
+
+    <br />
+
+   <p>An important factor in choosing a partner is whether or not he/she will be a good parent. </p>
+    <form id = "question2">
+      <label class="radio-inline">
+        <input type="radio" name="q2" value = "1">1 
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="q2" value = "2">2
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="q2" value = "3">3
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="q2" value = "4">4
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="q2" value = "5">5 
+      </label>
+    </form>
+
+    <br />
+
+   <p>It is best to love someone with a similar background.</p>
+    <form id = "question3">
+      <label class="radio-inline">
+        <input type="radio" name="q3" value = "1">1 
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="q3" value = "2">2
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="q3" value = "3">3
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="q3" value = "4">4
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="q3" value = "5">5 
+      </label>
+    </form>
+
+    <br />
+
+   <p>You like working together with somone to make important decisions.</p>
+    <form id = "question4">
+      <label class="radio-inline">
+        <input type="radio" name="q4" value = "1">1 
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="q4" value = "2">2
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="q4" value = "3">3
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="q4" value = "4">4
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="q4" value = "5">5 
+      </label>
+    </form>
+
+    <br />
+
+   <p>You're a passionate person.</p>
+    <form id = "question5">
+      <label class="radio-inline">
+        <input type="radio" name="q5" value = "1">1 
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="q5" value = "2">2
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="q5" value = "3">3
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="q5" value = "4">4
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="q5" value = "5">5 
+      </label>
+    </form>
+
+
+    <form>
+    <button type="submit" class="btn btn-primary submit">Submit</button>
+    </form>
+
+    <br/>
+ </div>
+    <footer class="footer">
+      <div class="container">
+        <p><a href="https://github.com/noelsimonson/friend-finder">GitHub Repo</a></p>
+      </div>
+    </footer>
+
+  </div>
+
+</body>
+</html>
+
+
+<script type="text/javascript">
+
+    $(".submit").on("click", function(event) {
+      event.preventDefault();
+
+    // var manageradiorel = $('input[name = "optradio"]:checked').val();
+    // alert(manageradiorel);
+
+      // Here we grab the form elements
+      var newFriend = {
+          friendName: $("#name").val().trim(),
+          friendPhoto: $("#photo").val().trim()
+        };
+
+      var answer = {};
+      $('input[type = "radio"]:checked').each(function(){
+        answer[$(this).attr('name')] = parseInt($(this).val());
+      });
+
+      console.log(newFriend);
+
+      newFriend.questionnaire = answer;
+
+      console.log(newFriend);
+
+
+      $.post("/api/friends", newFriend,
+        function(data) {
+
+          // If a table is available... tell user they are booked.
+          if (data) {
+            alert("Friend added");
+          }
+
+          // If a table is available... tell user they on the waiting list.
+          else {
+            alert("Friend not added");
+          }
+
+          // Clear the form when submitting
+          $("#name").val("");
+          $("#photo").val("");
+
+        });
+
+    });
+
+    function getFriendsList(){
+
+      var currentURL = window.location.origin;
+
+      // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
+      $.ajax({ url: currentURL + "/api/friends", method: "GET" })
+      .done(function(friendsData) {
+
+        // Here we are logging the URL so we have access to it for troubleshooting
+        console.log("------------------------------------");
+        console.log("URL: " + currentURL + "/api/tables");
+        console.log("------------------------------------");
+
+        // Here we then log the NYTData to console, where it will show up as an object.
+        console.log(friendsData);
+        console.log("------------------------------------");
+    });
+  }
+
+  getFriendsList();
+
+</script>
+
+</div> <!-- /container full -->
+
+</body>
+</html>
